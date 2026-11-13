@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>서버실 지킴이 — Reon Ahn's Lab Server</title>
+<meta name="description" content="ahnboat.xyz 서버실을 지키는 조수 하루와 인턴 시아·모아의 픽셀아트 루프 영상">
+<style>
+  :root{
+    --bg:#140d08; --panel:#20150d; --line:#3a2716; --amber:#f2a33a; --amber-soft:#c98a3c;
+    --teal:#4fd1c5; --green:#7be07b; --text:#f3e6d3; --muted:#b9a58a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:"Pretendard","Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;line-height:1.65}
+  a{color:var(--teal)}
+  .wrap{max-width:1080px;margin:0 auto;padding:32px 20px 64px}
+  header{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:center;margin-bottom:48px}
+  .eyebrow{font-family:ui-monospace,Menlo,monospace;color:var(--green);font-size:13px;letter-spacing:.08em}
+  .eyebrow::before{content:"● ";animation:blink 1.6s steps(2) infinite}
+  @keyframes blink{50%{opacity:.2}}
+  h1{font-size:clamp(30px,5vw,46px);line-height:1.2;margin:10px 0 14px;color:var(--amber)}
+  .lead{color:var(--muted);font-size:17px;margin:0 0 18px}
+  .hero-img{width:100%;border-radius:14px;border:2px solid var(--line);image-rendering:pixelated;display:block}
+  .status{display:flex;flex-wrap:wrap;gap:8px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px}
+  .status span{border:1px solid var(--line);background:var(--panel);padding:4px 10px;border-radius:999px;color:var(--muted)}
+  .status b{color:var(--green);font-weight:600}
+  h2{font-size:22px;margin:0 0 6px;color:var(--amber)}
+  .sub{color:var(--muted);margin:0 0 20px}
+  .guards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-bottom:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .card video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#000;image-rendering:pixelated}
+  .card .meta{padding:14px 16px 16px}
+  .card .no{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--amber-soft)}
+  .card h3{margin:2px 0 4px;font-size:19px}
+  .card p{margin:0;color:var(--muted);font-size:14.5px}
+  .controls{display:flex;gap:10px;margin:0 0 48px}
+  button{font:inherit;font-size:14px;background:transparent;color:var(--text);border:1px solid var(--amber-soft);
+    padding:8px 16px;border-radius:8px;cursor:pointer}
+  button:hover{background:var(--amber);color:#1a0f06}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-bottom:48px}
+  .gallery figure{margin:0}
+  .gallery img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block;image-rendering:pixelated}
+  .gallery figcaption{font-size:12px;color:var(--muted);margin-top:4px;font-family:ui-monospace,Menlo,monospace}
+  pre{background:#0c0805;border:1px solid var(--line);border-radius:10px;padding:16px;overflow-x:auto;
+    font-size:13px;color:#e8d8bf;line-height:1.5}
+  footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+  @media (max-width:760px){
+    header{grid-template-columns:1fr}
+    header .hero{max-width:300px}
+    .guards{grid-template-columns:1fr;max-width:340px;margin-left:auto;margin-right:auto}
+  }
+  @media (prefers-reduced-motion:reduce){.eyebrow::before{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div>
+      <div class="eyebrow">REON AHN'S LAB SERVER · ONLINE</div>
+      <h1>서버실 지킴이</h1>
+      <p class="lead">ahnboat.xyz 서버실은 조수 하루와 인턴 시아·모아가 밤새 지킵니다.
+        하루는 모니터를, 시아는 점검표를, 모아는 화분과 찻잔을 챙깁니다.</p>
+      <div class="status">
+        <span>racks <b>OK</b></span>
+        <span>guards <b>3 / 3</b></span>
+        <span>loop <b>12s</b></span>
+        <span>audio <b>off</b></span>
+      </div>
+    </div>
+    <div class="hero">
+      <img class="hero-img" src="web/SR_group_guards.jpg" width="576" height="1024"
+           alt="서버 랙 앞에 나란히 선 시아, 하루, 모아">
+    </div>
+  </header>
+
+  <section>
+    <h2>오늘의 당직</h2>
+    <p class="sub">세 편 모두 12초 무음 루프입니다. 아래 버튼으로 셋을 같은 박자에 맞출 수 있어요.</p>
+    <div class="guards">
+      <article class="card">
+        <video autoplay loop muted playsinline preload="auto" poster="loops/SR_haru_poster.jpg">
+          <source src="loops/SR_haru_loop.webm" type="video/webm">
+          <source src="loops/SR_haru_loop.mp4" type="video/mp4">
+        </video>
+        <div class="meta">
+          <div class="no">조수 · 서버실 책임자</div>
+          <h3>하루</h3>
+          <p>모니터 그래프를 지켜보다가, 눈이 마주치면 쉿 하고 웃어요.</p>
+        </div>
+      </article>
+      <article class="card">
+        <video autoplay loop muted playsinline preload="auto" poster="loops/SR_sia_poster.jpg">
+          <source src="loops/SR_sia_loop.webm" type="video/webm">
+          <source src="loops/SR_sia_loop.mp4" type="video/mp4">
+        </video>
+        <div class="meta">
+          <div class="no">No.005 · 야간 당직</div>
+          <h3>시아</h3>
+          <p>랙 불빛을 하나하나 점검표에 적어요. 가끔 하품하다 들킵니다.</p>
+        </div>
+      </article>
+      <article class="card">
+        <video autoplay loop muted playsinline preload="auto" poster="loops/SR_moa_poster.jpg">
+          <source src="loops/SR_moa_loop.webm" type="video/webm">
+          <source src="loops/SR_moa_loop.mp4" type="video/mp4">
+        </video>
+        <div class="meta">
+          <div class="no">No.006 · 응원 담당</div>
+          <h3>모아</h3>
+          <p>랙 위 화분에 물을 주고, 찻잔을 들고 응원해요.</p>
+        </div>
+      </article>
+    </div>
+    <div class="controls">
+      <button type="button" id="sync">셋 박자 맞추기</button>
+      <button type="button" id="pause">멈춤 / 재생</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>컷 모음</h2>
+    <p class="sub">루프에 들어간 장면들의 원본 정지 그림입니다. 원본 해상도(1152×2048)는 <code>stills/</code> 폴더에 있어요.</p>
+    <div class="gallery">
+      <figure><img src="web/SR_plate_server_room.jpg" alt="인물 없는 서버실 배경" loading="lazy"><figcaption>서버실 배경</figcaption></figure>
+      <figure><img src="web/SR_H1_topdown.jpg" alt="하루 올려다보기" loading="lazy"><figcaption>하루 · 올려다보기</figcaption></figure>
+      <figure><img src="web/SR_H4_typing.jpg" alt="하루 타이핑" loading="lazy"><figcaption>하루 · 타이핑</figcaption></figure>
+      <figure><img src="web/SR_H5_shh.jpg" alt="하루 쉿" loading="lazy"><figcaption>하루 · 쉿</figcaption></figure>
+      <figure><img src="web/SR_H6_eye.jpg" alt="하루 눈 클로즈업" loading="lazy"><figcaption>하루 · 눈</figcaption></figure>
+      <figure><img src="web/SR_H7_wave.jpg" alt="하루 손 흔들기" loading="lazy"><figcaption>하루 · 인사</figcaption></figure>
+      <figure><img src="web/SR_S2_topdown.jpg" alt="시아 올려다보기" loading="lazy"><figcaption>시아 · 올려다보기</figcaption></figure>
+      <figure><img src="web/SR_S1_checklist.jpg" alt="시아 점검표" loading="lazy"><figcaption>시아 · 점검표</figcaption></figure>
+      <figure><img src="web/SR_S3_yawn.jpg" alt="시아 하품" loading="lazy"><figcaption>시아 · 하품</figcaption></figure>
+      <figure><img src="web/SR_S4_eye.jpg" alt="시아 눈 클로즈업" loading="lazy"><figcaption>시아 · 눈</figcaption></figure>
+      <figure><img src="web/SR_S5_wave_v2.jpg" alt="시아 손 흔들기" loading="lazy"><figcaption>시아 · 인사</figcaption></figure>
+      <figure><img src="web/SR_M2_topdown.jpg" alt="모아 올려다보기" loading="lazy"><figcaption>모아 · 올려다보기</figcaption></figure>
+      <figure><img src="web/SR_M1_watering.jpg" alt="모아 화분 물주기" loading="lazy"><figcaption>모아 · 물주기</figcaption></figure>
+      <figure><img src="web/SR_M3_fighting.jpg" alt="모아 파이팅" loading="lazy"><figcaption>모아 · 파이팅</figcaption></figure>
+      <figure><img src="web/SR_M4_eye.jpg" alt="모아 눈 클로즈업" loading="lazy"><figcaption>모아 · 눈</figcaption></figure>
+      <figure><img src="web/SR_M5_wave_v2.jpg" alt="모아 손 흔들기" loading="lazy"><figcaption>모아 · 인사</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>ahnboat.xyz에 붙이기</h2>
+    <p class="sub">WordPress '사용자 정의 HTML' 블록에 넣으면 됩니다. <code>muted</code>와 <code>playsinline</code>은 빼지 마세요(모바일 자동재생 조건).</p>
+<pre><code>&lt;video autoplay loop muted playsinline
+       poster="https://adminmrobo.github.io/ahnboat_server_room_guards/loops/SR_sia_poster.jpg"
+       style="width:240px;aspect-ratio:9/16;object-fit:cover;border-radius:12px"&gt;
+  &lt;source src="https://adminmrobo.github.io/ahnboat_server_room_guards/loops/SR_sia_loop.webm" type="video/webm"&gt;
+  &lt;source src="https://adminmrobo.github.io/ahnboat_server_room_guards/loops/SR_sia_loop.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+    <p class="sub">하루·모아는 파일 이름의 <code>sia</code>를 <code>haru</code> · <code>moa</code>로 바꾸면 됩니다.</p>
+  </section>
+
+  <footer>
+    서버실 지킴이 · 캐릭터 출처 <a href="https://github.com/adminmrobo/fruitfly-lab-expressions">fruitfly-lab-expressions</a> ·
+    <a href="https://ahnboat.xyz">ahnboat.xyz</a> · 글 · 안상선 ((주)M-Robo 대표)
+  </footer>
+</div>
+
+<script>
+  const vids = [...document.querySelectorAll('.card video')];
+  document.getElementById('sync').addEventListener('click', () => {
+    vids.forEach(v => { try { v.currentTime = 0; v.play(); } catch (e) {} });
+  });
+  document.getElementById('pause').addEventListener('click', () => {
+    const anyPlaying = vids.some(v => !v.paused);
+    vids.forEach(v => { try { anyPlaying ? v.pause() : v.play(); } catch (e) {} });
+  });
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    vids.forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
+  }
+</script>
+</body>
+</html>

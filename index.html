@@ -15,30 +15,30 @@
     font-family:"Pretendard","Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;line-height:1.65}
   a{color:var(--teal)}
   .wrap{max-width:1080px;margin:0 auto;padding:32px 20px 64px}
-  header{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:center;margin-bottom:48px}
+  header{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:32px;align-items:center;margin-bottom:48px}
   .eyebrow{font-family:ui-monospace,Menlo,monospace;color:var(--green);font-size:13px;letter-spacing:.08em}
   .eyebrow::before{content:"● ";animation:blink 1.6s steps(2) infinite}
   @keyframes blink{50%{opacity:.2}}
   h1{font-size:clamp(30px,5vw,46px);line-height:1.2;margin:10px 0 14px;color:var(--amber)}
   .lead{color:var(--muted);font-size:17px;margin:0 0 18px}
-  .hero-img{width:100%;border-radius:14px;border:2px solid var(--line);image-rendering:pixelated;display:block}
+  .hero-img{width:100%;height:auto;max-height:70vh;object-fit:contain;border-radius:14px;border:2px solid var(--line);image-rendering:pixelated;display:block}
   .status{display:flex;flex-wrap:wrap;gap:8px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px}
   .status span{border:1px solid var(--line);background:var(--panel);padding:4px 10px;border-radius:999px;color:var(--muted)}
   .status b{color:var(--green);font-weight:600}
   h2{font-size:22px;margin:0 0 6px;color:var(--amber)}
   .sub{color:var(--muted);margin:0 0 20px}
-  .guards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-bottom:16px}
+  .guards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:0 auto 16px;max-width:760px}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
   .card video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#000;image-rendering:pixelated}
   .card .meta{padding:14px 16px 16px}
   .card .no{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--amber-soft)}
   .card h3{margin:2px 0 4px;font-size:19px}
   .card p{margin:0;color:var(--muted);font-size:14.5px}
-  .controls{display:flex;gap:10px;margin:0 0 48px}
+  .controls{display:flex;gap:10px;margin:0 auto 48px;max-width:760px}
   button{font:inherit;font-size:14px;background:transparent;color:var(--text);border:1px solid var(--amber-soft);
     padding:8px 16px;border-radius:8px;cursor:pointer}
   button:hover{background:var(--amber);color:#1a0f06}
-  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-bottom:48px}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px;margin-bottom:48px}
   .gallery figure{margin:0}
   .gallery img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:block;image-rendering:pixelated}
   .gallery figcaption{font-size:12px;color:var(--muted);margin-top:4px;font-family:ui-monospace,Menlo,monospace}
@@ -47,7 +47,7 @@
   footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
   @media (max-width:760px){
     header{grid-template-columns:1fr}
-    header .hero{max-width:300px}
+    header .hero{max-width:220px}
     .guards{grid-template-columns:1fr;max-width:340px;margin-left:auto;margin-right:auto}
   }
   @media (prefers-reduced-motion:reduce){.eyebrow::before{animation:none}}
